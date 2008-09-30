@@ -1,0 +1,10 @@
+PixMessage
+
+Requires Lispbuilder-sdl
+
+
+PixMessage has three uses. First it can embed a number in the lowest 2 bits of a RBG color. Using that it can also embed a character from the provided list into a color (as a number of its position). From which it can embed a string into an image without altering the image in strongly visible way (on a 32 bit image, its VARY hard to notice). It can also embed a byte into 2 colors, and then a file into an image. It ignores the blue aspect, only making sure it isn't set to 0 prematurely. It uses the blue to indicate End Of File, by embedding the number 0. This is inefficient, and could be done by eating one more bit on any of the colors and simply setting all and that to zero at EOF (an EOF bit) and then staggering one byte across 2 colors, but I didn't feel like it ;-).
+
+
+Anyway, I'm accepting patches should anyone do anything intresting with it and feel like sharing (it would be nice of you :-). 
+Plus its under the MIT license so feel free to chop it up too!
